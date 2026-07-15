@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeowAdopt - Adopsi Kucing Impianmu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] text-slate-800 selection:bg-amber-200 selection:text-amber-900 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-orange-100/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-amber-500 rounded-2xl flex items-center justify-center text-white shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-cat text-xl"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">MeowAdopt</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 font-medium text-slate-600">
+                    <a href="#home" class="hover:text-amber-600 transition-colors">Beranda</a>
+                    <a href="#katalog" class="hover:text-amber-600 transition-colors">Katalog Kucing</a>
+                    <a href="#cara-kerja" class="hover:text-amber-600 transition-colors">Cara Adopsi</a>
+                    <a href="#faq" class="hover:text-amber-600 transition-colors">FAQ</a>
+                </div>
+                <div>
+                    <a href="#katalog" class="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-amber-500/15 transition-all hover:scale-[1.02] flex items-center gap-2 text-sm">
+                        Adopsi Sekarang <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 md:py-28">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.orange.50),white)] opacity-70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-amber-500/10 text-amber-700 px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase">
+                        <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-ping"></span>
+                        30+ Kucing Butuh Rumah Baru Bulan Ini
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        Temukan Teman Bulu Terbaik untuk <span class="bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent">Keluargamu</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        MeowAdopt menghubungkan kucing terlantar dan butuh rumah dengan calon adopter penyayang. Setiap kucing telah divaksin, steril, dan siap memberikan cinta tanpa syarat.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#katalog" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-amber-500/25 transition-all text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-paw"></i> Lihat Kucing Siap Adopsi
+                        </a>
+                        <a href="#cara-kerja" class="bg-white border border-slate-200 hover:border-amber-300 text-slate-700 hover:text-amber-600 px-8 py-4 rounded-2xl font-bold transition-all text-center flex items-center justify-center gap-2">
+                            Pelajari Alur Adopsi
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-tr from-amber-400 to-orange-300 shadow-2xl p-4 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <!-- We use high quality unspash cat image that renders beautifully -->
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000" alt="Kucing Menggemaskan" class="w-full h-full object-cover rounded-2xl shadow-inner">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-orange-50/50 flex items-center gap-3 animate-bounce">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Telah Diadopsi</p>
+                                <p class="text-sm font-bold text-slate-800">140+ Kucing Hebat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN SETTINGS & WHATSAPP CONFIG -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 mb-16">
+        <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="space-y-1">
+                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <i class="fa-solid fa-gears text-amber-500"></i> Pengaturan Kontak Adopsi
+                    </h3>
+                    <p class="text-xs text-slate-500">Sesuaikan nomor WhatsApp admin di bawah ini untuk menguji tombol chat otomatis.</p>
+                </div>
+                <div class="w-full md:w-auto flex items-center gap-2">
+                    <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-2 rounded-lg">WA ADMIN:</span>
+                    <input type="text" id="inputWhatsapp" value="6281234567890" class="border border-slate-200 rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 w-44" oninput="updateWhatsappNumber(this.value)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG SECTON -->
+    <section id="katalog" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">Temui Calon Sahabat Terbaikmu</h2>
+                <p class="text-slate-600">Klik tombol adopsi pada kucing pilihanmu, pesan chat otomatis untuk WhatsApp akan disiapkan secara instan.</p>
+            </div>
+
+            <!-- FILTER BUTTONS -->
+            <div class="flex flex-wrap gap-2 justify-center mb-10">
+                <button onclick="filterKucing('semua')" class="filter-btn active bg-amber-500 text-white font-semibold px-5 py-2 rounded-xl text-sm transition-all shadow-sm">Semua</button>
+                <button onclick="filterKucing('kitten')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Kitten (< 6 bln)</button>
+                <button onclick="filterKucing('dewasa')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Dewasa</button>
+                <button onclick="filterKucing('jantan')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Jantan</button>
+                <button onclick="filterKucing('betina')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Betina</button>
+            </div>
+
+            <!-- CARDS GRID -->
+            <div id="katalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Data Kucing akan di-render menggunakan JavaScript di bawah -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA SECTION -->
+    <section id="cara-kerja" class="py-16 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900">4 Langkah Mudah Mengadopsi</h2>
+                <p class="text-slate-600">Kami membuat proses adopsi menjadi transparan, aman, dan penuh kasih sayang.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
+                    <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">1</div>
+                    <div class="pt-4 space-y-2">
+                        <h4 class="font-bold text-lg text-slate-900">Pilih Kucing</h4>
+                        <p class="text-sm text-slate-600">Jelajahi galeri katalog kami dan temukan kucing yang mencuri hatimu.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
+                    <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">2</div>
+                    <div class="pt-4 space-y-2">
+                        <h4 class="font-bold text-lg text-slate-900">Kirim Chat WA</h4>
+                        <p class="text-sm text-slate-600">Klik 'Adopsi', pesan template otomatis sudah langsung terisi sesuai item kucing.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
+                    <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">3</div>
+                    <div class="pt-4 space-y-2">
+                        <h4 class="font-bold text-lg text-slate-900">Wawancara Singkat</h4>
+                        <p class="text-sm text-slate-600">Admin akan melakukan verifikasi kelayakan calon rumah tinggal baru kucing.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
+                    <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">4</div>
+                    <div class="pt-4 space-y-2">
+                        <h4 class="font-bold text-lg text-slate-900">Bawa Pulang</h4>
+                        <p class="text-sm text-slate-600">Jemput teman barumu untuk memulai petualangan seru bersama keluarga barunya!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-900">Pertanyaan Umum (FAQ)</h2>
+                <p class="text-slate-600">Beberapa hal penting yang sering ditanyakan mengenai adopsi di MeowAdopt.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-[#FAF8F5] p-5 rounded-2xl border border-orange-100/30" open>
+                    <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none">
+                        <span>Apakah adopsi kucing di MeowAdopt dipungut biaya?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-slate-400"></i></span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                        Proses adopsi di MeowAdopt sepenuhnya gratis. Namun, kami sangat menganjurkan adopter untuk memberikan kontribusi pakan/steril seikhlasnya untuk melestarikan dan menolong kucing jalanan lainnya.
+                    </p>
+                </details>
+
+                <details class="group bg-[#FAF8F5] p-5 rounded-2xl border border-orange-100/30">
+                    <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none">
+                        <span>Bagaimana jika saya berada di luar kota?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-slate-400"></i></span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                        Kami sangat menyarankan penjemputan langsung agar Anda dapat melakukan interaksi awal dengan kucing. Untuk luar kota terdekat, pengiriman hewan dapat menggunakan kurir khusus hewan berlisensi dengan biaya ditanggung penuh oleh adopter.
+                    </p>
+                </details>
+
+                <details class="group bg-[#FAF8F5] p-5 rounded-2xl border border-orange-100/30">
+                    <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none">
+                        <span>Apakah kucing sudah divaksinasi?</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-slate-400"></i></span>
+                    </summary>
+                    <p class="text-slate-600 text-sm mt-3 leading-relaxed">
+                        Ya! Seluruh kucing di katalog MeowAdopt dipastikan sudah divaksin dosis pertama/lengkap dan juga sudah disteril untuk kucing usia dewasa guna mencegah overpopulasi. Buku vaksin akan diberikan saat serah terima.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-amber-500 rounded-2xl flex items-center justify-center text-white">
+                        <i class="fa-solid fa-cat text-xl"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight">MeowAdopt</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Platform kemanusiaan nirlaba yang berfokus menyelamatkan kucing-kucing malang dan mencarikan rumah baru yang nyaman dan penuh kasih bagi mereka.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg text-amber-500 mb-4">Navigasi Cepat</h4>
+                <div class="flex flex-col gap-2 text-slate-400 text-sm">
+                    <a href="#home" class="hover:text-white transition-colors">Beranda</a>
+                    <a href="#katalog" class="hover:text-white transition-colors">Katalog Kucing</a>
+                    <a href="#cara-kerja" class="hover:text-white transition-colors">Cara Kerja</a>
+                    <a href="#faq" class="hover:text-white transition-colors">Pertanyaan Umum (FAQ)</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg text-amber-500 mb-4">Kontak Hubungi</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    📍 Jl. Pecinta Kucing No. 45, Kota Jakarta Barat, Indonesia<br>
+                    ✉️ support@meowadopt.com<br>
+                    📞 +62 812 3456 7890
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+            <p>&copy; 2026 MeowAdopt. Dibuat dengan rasa penuh kasih sayang terhadap Kucing.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-tiktok text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Database Kucing (Simulasi API)
+        const kucingData = [
+            {
+                id: 1,
+                nama: "Whiskers",
+                kategori: "kitten",
+                gender: "jantan",
+                umur: "3 Bulan",
+                ras: "Domestic Short Hair",
+                sifat: "Suka Bermain & Sangat Ramah",
+                gambar: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=600",
+                badge: "Terpopuler"
+            },
+            {
+                id: 2,
+                nama: "Luna",
+                kategori: "kitten",
+                gender: "betina",
+                umur: "5 Bulan",
+                ras: "Persia Mix Calico",
+                sifat: "Manja, Tenang, Senang Dipeluk",
+                gambar: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=600",
+                badge: "Terlucu"
+            },
+            {
+                id: 3,
+                nama: "Oliver",
+                kategori: "dewasa",
+                gender: "jantan",
+                umur: "1.2 Tahun",
+                ras: "Tabby Orange",
+                sifat: "Aktif, Pemberani, Suka Eksplorasi",
+                gambar: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&q=80&w=600",
+                badge: "Kucing Oren"
+            },
+            {
+                id: 4,
+                nama: "Bella",
+                kategori: "dewasa",
+                gender: "betina",
+                umur: "2 Tahun",
+                ras: "British Shorthair Mix",
+                sifat: "Sangat Tenang & Penyendiri",
+                gambar: "https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&q=80&w=600",
+                badge: "Anggun"
+            },
+            {
+                id: 5,
+                nama: "Milo",
+                kategori: "kitten",
+                gender: "jantan",
+                umur: "2.5 Bulan",
+                ras: "Local Tuxedo Cat",
+                sifat: "Lincah, Suka Mengejar Mainan",
+                gambar: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=600",
+                badge: "Aktif"
+            },
+            {
+                id: 6,
+                nama: "Cloe",
+                kategori: "dewasa",
+                gender: "betina",
+                umur: "1 Year",
+                ras: "Siamese Mix",
+                sifat: "Suka Meong Manis, Penurut",
+                gambar: "https://images.unsplash.com/photo-1513360309081-36f5e878fc9e?auto=format&fit=crop&q=80&w=600",
+                badge: "Eksotis"
+            }
+        ];
+
+        // Default WhatsApp admin jika user belum mengubahnya
+        let targetWhatsapp = "6281234567890";
+
+        // Fungsi memperbarui nomor WA
+        function updateWhatsappNumber(number) {
+            // Bersihkan spasi, strip atau tanda + yang mungkin dimasukkan user
+            targetWhatsapp = number.replace(/[^0-9]/g, '');
+            console.log("Nomor WA Admin diperbarui ke:", targetWhatsapp);
+        }
+
+        // Fungsi untuk men-generate pesan dinamis dan mengarahkan ke WhatsApp
+        function adopsiKucing(nama, ras, umur, gender) {
+            // Template Teks Pesan Otomatis
+            const textMessage = `Halo Admin MeowAdopt, saya sangat tertarik untuk mengadopsi kucing menggemaskan ini:
+            
+🐾 *Nama Kucing:* ${nama}
+🧬 *Ras:* ${ras}
+📅 *Umur:* ${umur}
+♂️/♀️ *Gender:* ${gender.toUpperCase()}
+
+Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanjut mengenai persyaratan dan tata caranya. Terima kasih!`;
+
+            // Encoding string ke format URL aman
+            const encodedText = encodeURIComponent(textMessage);
+            const whatsappURL = `https://wa.me/${targetWhatsapp}?text=${encodedText}`;
+
+            // Buka halaman baru ke WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Fungsi Render Kartu Kucing ke HTML
+        function renderKatalog(filter = 'semua') {
+            const grid = document.getElementById('katalog-grid');
+            grid.innerHTML = ''; // bersihkan katalog lama
+
+            // Filter data
+            const filteredData = kucingData.filter(item => {
+                if (filter === 'semua') return true;
+                if (filter === 'kitten') return item.kategori === 'kitten';
+                if (filter === 'dewasa') return item.kategori === 'dewasa';
+                if (filter === 'jantan') return item.gender === 'jantan';
+                if (filter === 'betina') return item.gender === 'betina';
+                return true;
+            });
+
+            if (filteredData.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fa-solid fa-face-frown text-5xl text-slate-300 mb-3"></i>
+                        <p class="text-slate-500 font-medium">Maaf, kucing dengan kriteria tersebut belum tersedia.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Render masing-masing item
+            filteredData.forEach(cat => {
+                const badgeIconClass = cat.gender === 'jantan' ? 'fa-mars text-blue-500' : 'fa-venus text-pink-500';
+                
+                const cardHtml = `
+                    <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-amber-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="relative h-64 overflow-hidden">
+                            <span class="absolute top-4 left-4 z-10 bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                ${cat.badge}
+                            </span>
+                            <img src="${cat.gambar}" alt="${cat.nama}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-xl font-extrabold text-slate-900">${cat.nama}</h3>
+                                    <div class="flex items-center gap-1.5 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-100">
+                                        <i class="fa-solid ${badgeIconClass} text-xs"></i>
+                                        <span class="text-xs font-semibold text-slate-600 capitalize">${cat.gender}</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs font-semibold text-amber-600 mt-1">${cat.ras} • ${cat.umur}</p>
+                                <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                                    <i class="fa-solid fa-quote-left text-xs text-amber-300 mr-1"></i>
+                                    ${cat.sifat}
+                                </p>
+                            </div>
+                            <button onclick="adopsiKucing('${cat.nama}', '${cat.ras}', '${cat.umur}', '${cat.gender}')" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-white py-3 rounded-2xl font-bold shadow-sm transition-all flex items-center justify-center gap-2 text-sm group-hover:shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Adopsi ${cat.nama}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHtml;
+            });
+        }
+
+        // Fungsi switch tab active filter
+        function filterKucing(filterType) {
+            // Update UI Active Tab Button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+
+            // Cari tombol yang di-click lalu beri class active
+            const clickedBtn = window.event.target;
+            clickedBtn.classList.remove('bg-slate-100', 'text-slate-600');
+            clickedBtn.classList.add('bg-amber-500', 'text-white', 'shadow-sm');
+
+            // Render ulang katalog berdasarkan filter
+            renderKatalog(filterType);
+        }
+
+        // Render Pertama Kali saat web dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            renderKatalog('semua');
+        });
+    </script>
+</body>
+</html>
