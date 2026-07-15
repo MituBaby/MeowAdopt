@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,8 +83,7 @@
                 </div>
                 <div class="lg:col-span-5 relative flex justify-center">
                     <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-tr from-amber-400 to-orange-300 shadow-2xl p-4 rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <!-- We use high quality unspash cat image that renders beautifully -->
-                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1000" alt="Kucing Menggemaskan" class="w-full h-full object-cover rounded-2xl shadow-inner">
+                        <img src="img/hero-cat.jpg" alt="Kucing Menggemaskan" class="w-full h-full object-cover rounded-2xl shadow-inner">
                         <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-orange-50/50 flex items-center gap-3 animate-bounce">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
                                 <i class="fa-solid fa-heart"></i>
@@ -118,7 +117,7 @@
         </div>
     </section>
 
-    <!-- KATALOG SECTON -->
+    <!-- KATALOG SECTION -->
     <section id="katalog" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
@@ -129,7 +128,7 @@
             <!-- FILTER BUTTONS -->
             <div class="flex flex-wrap gap-2 justify-center mb-10">
                 <button onclick="filterKucing('semua')" class="filter-btn active bg-amber-500 text-white font-semibold px-5 py-2 rounded-xl text-sm transition-all shadow-sm">Semua</button>
-                <button onclick="filterKucing('kitten')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Kitten (< 6 bln)</button>
+                <button onclick="filterKucing('kitten')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Kitten (&lt; 6 bln)</button>
                 <button onclick="filterKucing('dewasa')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Dewasa</button>
                 <button onclick="filterKucing('jantan')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Jantan</button>
                 <button onclick="filterKucing('betina')" class="filter-btn bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-600 font-semibold px-5 py-2 rounded-xl text-sm transition-all">Betina</button>
@@ -137,7 +136,7 @@
 
             <!-- CARDS GRID -->
             <div id="katalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Data Kucing akan di-render menggunakan JavaScript di bawah -->
+                <!-- Data Kucing di-render via JavaScript -->
             </div>
         </div>
     </section>
@@ -151,7 +150,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
                 <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
                     <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">1</div>
                     <div class="pt-4 space-y-2">
@@ -159,7 +157,6 @@
                         <p class="text-sm text-slate-600">Jelajahi galeri katalog kami dan temukan kucing yang mencuri hatimu.</p>
                     </div>
                 </div>
-                <!-- Step 2 -->
                 <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
                     <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">2</div>
                     <div class="pt-4 space-y-2">
@@ -167,7 +164,6 @@
                         <p class="text-sm text-slate-600">Klik 'Adopsi', pesan template otomatis sudah langsung terisi sesuai item kucing.</p>
                     </div>
                 </div>
-                <!-- Step 3 -->
                 <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
                     <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">3</div>
                     <div class="pt-4 space-y-2">
@@ -175,7 +171,6 @@
                         <p class="text-sm text-slate-600">Admin akan melakukan verifikasi kelayakan calon rumah tinggal baru kucing.</p>
                     </div>
                 </div>
-                <!-- Step 4 -->
                 <div class="bg-white p-6 rounded-2xl border border-orange-100/50 relative">
                     <div class="absolute -top-5 left-6 w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-amber-500/20">4</div>
                     <div class="pt-4 space-y-2">
@@ -273,7 +268,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Database Kucing (Simulasi API)
+        // Database Kucing lokal dengan path folder img/
         const kucingData = [
             {
                 id: 1,
@@ -283,7 +278,7 @@
                 umur: "3 Bulan",
                 ras: "Domestic Short Hair",
                 sifat: "Suka Bermain & Sangat Ramah",
-                gambar: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-whiskers.jpg",
                 badge: "Terpopuler"
             },
             {
@@ -294,7 +289,7 @@
                 umur: "5 Bulan",
                 ras: "Persia Mix Calico",
                 sifat: "Manja, Tenang, Senang Dipeluk",
-                gambar: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-luna.jpg",
                 badge: "Terlucu"
             },
             {
@@ -305,7 +300,7 @@
                 umur: "1.2 Tahun",
                 ras: "Tabby Orange",
                 sifat: "Aktif, Pemberani, Suka Eksplorasi",
-                gambar: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-oliver.jpg",
                 badge: "Kucing Oren"
             },
             {
@@ -316,7 +311,7 @@
                 umur: "2 Tahun",
                 ras: "British Shorthair Mix",
                 sifat: "Sangat Tenang & Penyendiri",
-                gambar: "https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-bella.jpg",
                 badge: "Anggun"
             },
             {
@@ -327,7 +322,7 @@
                 umur: "2.5 Bulan",
                 ras: "Local Tuxedo Cat",
                 sifat: "Lincah, Suka Mengejar Mainan",
-                gambar: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-milo.jpg",
                 badge: "Aktif"
             },
             {
@@ -335,27 +330,21 @@
                 nama: "Cloe",
                 kategori: "dewasa",
                 gender: "betina",
-                umur: "1 Year",
+                umur: "1 Tahun",
                 ras: "Siamese Mix",
                 sifat: "Suka Meong Manis, Penurut",
-                gambar: "https://images.unsplash.com/photo-1513360309081-36f5e878fc9e?auto=format&fit=crop&q=80&w=600",
+                gambar: "img/cat-cloe.jpg",
                 badge: "Eksotis"
             }
         ];
 
-        // Default WhatsApp admin jika user belum mengubahnya
         let targetWhatsapp = "6281234567890";
 
-        // Fungsi memperbarui nomor WA
         function updateWhatsappNumber(number) {
-            // Bersihkan spasi, strip atau tanda + yang mungkin dimasukkan user
             targetWhatsapp = number.replace(/[^0-9]/g, '');
-            console.log("Nomor WA Admin diperbarui ke:", targetWhatsapp);
         }
 
-        // Fungsi untuk men-generate pesan dinamis dan mengarahkan ke WhatsApp
         function adopsiKucing(nama, ras, umur, gender) {
-            // Template Teks Pesan Otomatis
             const textMessage = `Halo Admin MeowAdopt, saya sangat tertarik untuk mengadopsi kucing menggemaskan ini:
             
 🐾 *Nama Kucing:* ${nama}
@@ -365,20 +354,15 @@
 
 Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanjut mengenai persyaratan dan tata caranya. Terima kasih!`;
 
-            // Encoding string ke format URL aman
             const encodedText = encodeURIComponent(textMessage);
             const whatsappURL = `https://wa.me/${targetWhatsapp}?text=${encodedText}`;
-
-            // Buka halaman baru ke WhatsApp
             window.open(whatsappURL, '_blank');
         }
 
-        // Fungsi Render Kartu Kucing ke HTML
         function renderKatalog(filter = 'semua') {
             const grid = document.getElementById('katalog-grid');
-            grid.innerHTML = ''; // bersihkan katalog lama
+            grid.innerHTML = '';
 
-            // Filter data
             const filteredData = kucingData.filter(item => {
                 if (filter === 'semua') return true;
                 if (filter === 'kitten') return item.kategori === 'kitten';
@@ -398,7 +382,6 @@ Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanju
                 return;
             }
 
-            // Render masing-masing item
             filteredData.forEach(cat => {
                 const badgeIconClass = cat.gender === 'jantan' ? 'fa-mars text-blue-500' : 'fa-venus text-pink-500';
                 
@@ -435,25 +418,20 @@ Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanju
             });
         }
 
-        // Fungsi switch tab active filter
         function filterKucing(filterType) {
-            // Update UI Active Tab Button
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.classList.remove('bg-amber-500', 'text-white', 'shadow-sm');
                 btn.classList.add('bg-slate-100', 'text-slate-600');
             });
 
-            // Cari tombol yang di-click lalu beri class active
             const clickedBtn = window.event.target;
             clickedBtn.classList.remove('bg-slate-100', 'text-slate-600');
             clickedBtn.classList.add('bg-amber-500', 'text-white', 'shadow-sm');
 
-            // Render ulang katalog berdasarkan filter
             renderKatalog(filterType);
         }
 
-        // Render Pertama Kali saat web dimuat
         document.addEventListener('DOMContentLoaded', () => {
             renderKatalog('semua');
         });
