@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeowAdopt - Adopsi Kucing Impianmu</title>
+    <title>MeowAdopt - Adopsi Kucing Impianmu (Optimized)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome for Icons -->
@@ -83,7 +83,8 @@
                 </div>
                 <div class="lg:col-span-5 relative flex justify-center">
                     <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-gradient-to-tr from-amber-400 to-orange-300 shadow-2xl p-4 rotate-3 hover:rotate-0 transition-transform duration-500">
-                        <img src="img/hero-cat.jpg" alt="Kucing Menggemaskan" class="w-full h-full object-cover rounded-2xl shadow-inner">
+                        <!-- Cloudinary Optimized Image with fetch -->
+                        <img src="https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800" alt="Kucing Menggemaskan" class="w-full h-full object-cover rounded-2xl shadow-inner">
                         <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg border border-orange-50/50 flex items-center gap-3 animate-bounce">
                             <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg">
                                 <i class="fa-solid fa-heart"></i>
@@ -111,7 +112,7 @@
                 </div>
                 <div class="w-full md:w-auto flex items-center gap-2">
                     <span class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-2 rounded-lg">WA ADMIN:</span>
-                    <input type="text" id="inputWhatsapp" value="6283851117419" class="border border-slate-200 rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 w-44" oninput="updateWhatsappNumber(this.value)">
+                    <input type="text" id="inputWhatsapp" value="6281234567890" class="border border-slate-200 rounded-lg px-3 py-1.5 text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500 w-44" oninput="updateWhatsappNumber(this.value)">
                 </div>
             </div>
         </div>
@@ -268,7 +269,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Database Kucing lokal dengan path folder img/
+        // Database Kucing menggunakan URL Cloudinary untuk optimalisasi instan
         const kucingData = [
             {
                 id: 1,
@@ -278,7 +279,7 @@
                 umur: "3 Bulan",
                 ras: "Domestic Short Hair",
                 sifat: "Suka Bermain & Sangat Ramah",
-                gambar: "img/cat-whiskers.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500",
                 badge: "Terpopuler"
             },
             {
@@ -289,7 +290,7 @@
                 umur: "5 Bulan",
                 ras: "Persia Mix Calico",
                 sifat: "Manja, Tenang, Senang Dipeluk",
-                gambar: "img/cat-luna.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500",
                 badge: "Terlucu"
             },
             {
@@ -300,7 +301,7 @@
                 umur: "1.2 Tahun",
                 ras: "Tabby Orange",
                 sifat: "Aktif, Pemberani, Suka Eksplorasi",
-                gambar: "img/cat-oliver.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=500",
                 badge: "Kucing Oren"
             },
             {
@@ -311,7 +312,7 @@
                 umur: "2 Tahun",
                 ras: "British Shorthair Mix",
                 sifat: "Sangat Tenang & Penyendiri",
-                gambar: "img/cat-bella.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=500",
                 badge: "Anggun"
             },
             {
@@ -322,7 +323,7 @@
                 umur: "2.5 Bulan",
                 ras: "Local Tuxedo Cat",
                 sifat: "Lincah, Suka Mengejar Mainan",
-                gambar: "img/cat-milo.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1511497584788-876760111969?w=500",
                 badge: "Aktif"
             },
             {
@@ -333,12 +334,12 @@
                 umur: "1 Tahun",
                 ras: "Siamese Mix",
                 sifat: "Suka Meong Manis, Penurut",
-                gambar: "img/cat-cloe.jpg",
+                gambar: "https://res.cloudinary.com/demo/image/fetch/f_auto,q_auto/https://images.unsplash.com/photo-1513360309081-36f5e878fc9e?w=500",
                 badge: "Eksotis"
             }
         ];
 
-        let targetWhatsapp = "6283851117419";
+        let targetWhatsapp = "6281234567890";
 
         function updateWhatsappNumber(number) {
             targetWhatsapp = number.replace(/[^0-9]/g, '');
@@ -391,7 +392,8 @@ Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanju
                             <span class="absolute top-4 left-4 z-10 bg-amber-500 text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                                 ${cat.badge}
                             </span>
-                            <img src="${cat.gambar}" alt="${cat.nama}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <!-- Ditambahkan loading="lazy" untuk menghemat bandwidth -->
+                            <img src="${cat.gambar}" alt="${cat.nama}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                             <div>
@@ -425,9 +427,11 @@ Apakah kucing ini masih tersedia untuk diadopsi? Saya ingin bertanya lebih lanju
                 btn.classList.add('bg-slate-100', 'text-slate-600');
             });
 
-            const clickedBtn = window.event.target;
-            clickedBtn.classList.remove('bg-slate-100', 'text-slate-600');
-            clickedBtn.classList.add('bg-amber-500', 'text-white', 'shadow-sm');
+            if (window.event) {
+                const clickedBtn = window.event.target;
+                clickedBtn.classList.remove('bg-slate-100', 'text-slate-600');
+                clickedBtn.classList.add('bg-amber-500', 'text-white', 'shadow-sm');
+            }
 
             renderKatalog(filterType);
         }
